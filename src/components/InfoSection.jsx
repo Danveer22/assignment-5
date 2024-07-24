@@ -12,7 +12,12 @@ const SectionInfo = styled.section`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    /* grid-template-rows: repeat(6, 1fr); */
+
+    img {
+      width: 100%;
+      height: auto;
+    }
 
     img[alt="egg image"] {
       grid-row: 1 / 2;
@@ -37,6 +42,7 @@ const SectionDiv = styled.div`
   }
   @media (max-width: 768px) {
     text-align: center;
+    padding: 4rem 0;
   }
 `;
 

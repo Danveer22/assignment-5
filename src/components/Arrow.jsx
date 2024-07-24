@@ -7,12 +7,13 @@ const DIV = styled.div`
 
   @media (max-width: 768px) {
     top: 45%;
+    display: ${(props) => (props.isopen === "true" ? "none" : "block")};
   }
 `;
 
-function Arrow() {
+function Arrow({ isopen }) {
   return (
-    <DIV>
+    <DIV isopen={isopen.toString()}>
       <svg width="36" height="114" xmlns="http://www.w3.org/2000/svg">
         <g
           stroke="#FFF"

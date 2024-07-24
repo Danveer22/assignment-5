@@ -10,10 +10,15 @@ const DynamicImageDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: end;
+
+  @media (max-width: 768px) {
+    height: 50rem;
+  }
 `;
 
 const DIV = styled.div`
   text-align: center;
+
   width: 60%;
   h3 {
     color: ${(props) => props.color};
@@ -25,6 +30,10 @@ const DIV = styled.div`
   p {
     color: ${(props) => props.color};
     font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
   }
 `;
 

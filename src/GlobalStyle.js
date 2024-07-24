@@ -48,7 +48,6 @@ html {
 
 body {
 font-family: var(--font-family-barlow);
-
 font-size: 1.6rem;
 line-height: 1.6;
 

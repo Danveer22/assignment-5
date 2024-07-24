@@ -8,6 +8,7 @@ const StyledFooter = styled.footer`
   a {
     text-decoration: none;
     color: var(--color-text-cyan);
+    /* background-color: orange; */
   }
 `;
 
@@ -36,6 +37,11 @@ const SectionLinks = styled.section`
 
         a {
           color: var(--color-text-footer-cyan);
+          transition: all 0.3s;
+
+          &:hover {
+            color: var(--color-white);
+          }
         }
       }
     }
@@ -50,8 +56,14 @@ const SectionIcons = styled.section`
     gap: 1.5rem;
 
     li {
-      svg {
+      svg path {
         height: 2rem;
+        transition: all 0.3s;
+      }
+      &:hover {
+        svg path {
+          fill: white !important;
+        }
       }
     }
   }

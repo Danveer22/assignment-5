@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import Arrow from "./Arrow";
+import { useState } from "react";
+import MenuBar from "./MenuBar";
+import css from "styled-components";
 
 const StyledHeader = styled.header`
   height: 100vh;
@@ -72,13 +75,20 @@ const H2 = styled.h2`
   margin-top: 4rem;
   letter-spacing: 0.8rem;
   font-family: var(--font-family-fraunces);
+
   @media (max-width: 768px) {
     font-size: 4rem;
     margin-top: 2rem;
+    display: ${(props) => (props.isopen === "true" ? "none" : "block")};
   }
 `;
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleMenu() {
+    setIsOpen((isOpen) => !isOpen);
+  }
   return (
     <StyledHeader>
       <StyledNav>
@@ -99,7 +109,7 @@ function Header() {
             <a href="#">Contact</a>
           </li>
         </Ul>
-        <Menu>
+        <Menu onClick={handleMenu}>
           <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M24 16v2H0v-2h24zm0-8v2H0V8h24zm0-8v2H0V0h24z"
@@ -108,9 +118,10 @@ function Header() {
             />
           </svg>
         </Menu>
+        {isOpen && <MenuBar />}
       </StyledNav>
-      <H2>We are Creatives</H2>
-      <Arrow />
+      <H2 isopen={isOpen.toString()}>We are Creatives</H2>
+      <Arrow isopen={isOpen} />
     </StyledHeader>
   );
 }
